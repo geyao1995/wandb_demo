@@ -1,0 +1,13 @@
+program: train_mnist.py
+method: grid
+parameters:
+  lr_schedule:
+    values: [ step, cyclic ]
+  epoch_total:
+    values: [ 2, 4 ]
+metric:
+  goal: maximize
+  name: test-result/accuracy
+project: my-mnist-test-project
+name: MNIST-Sweep-Test
+description: test sweep demo
