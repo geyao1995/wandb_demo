@@ -29,19 +29,27 @@ The codes in this repository implement the experiments about training and testin
 
 Pass config dictionary when initialize W&B: 
 
+https://github.com/geyao1995/wandb_demo/blob/331385c5d3f463c6ed8e45f52982bdcbd3592f6c/train_mnist.py#L26-L29
+
 Reference: [Configure Experiments with `wandb.config`](https://docs.wandb.ai/guides/track/config)
 
 ## log metric
 
 Log accuracy (x-axis) according to epoch (y-axis):
 
+https://github.com/geyao1995/wandb_demo/blob/331385c5d3f463c6ed8e45f52982bdcbd3592f6c/train_mnist.py#L65
+
 Log learning rate per batch:
+
+https://github.com/geyao1995/wandb_demo/blob/331385c5d3f463c6ed8e45f52982bdcbd3592f6c/trainer.py#L63-L64
 
 Reference: [Log Data with `wandb.log`](https://docs.wandb.ai/guides/track/log)
 
 ## sweep parameters
 
 Load different parameter configs from wandb:
+
+https://github.com/geyao1995/wandb_demo/blob/331385c5d3f463c6ed8e45f52982bdcbd3592f6c/train_mnist.py#L31
 
 Rerun specific parameter config: 
 
