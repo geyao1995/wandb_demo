@@ -23,6 +23,10 @@ The codes in this repository implement the experiments about training and testin
 
 [Sign up and Login wandb account](https://docs.wandb.ai/quickstart#1.-set-up-wandb).
 
+Avoid uploading model weights (saved in wandb local directory) to wandb cloud:
+
+https://github.com/geyao1995/wandb_demo/blob/23b6672582c6ae74920d5f7cbbdf7678bb515fd6/help_funcs_wandb.py#L11
+
 # W&B helps following tasks
 
 ## record hyper-parameters
@@ -53,9 +57,15 @@ https://github.com/geyao1995/wandb_demo/blob/331385c5d3f463c6ed8e45f52982bdcbd35
 
 Rerun specific parameter config: 
 
-Just delete that run and rerun the sweep, the completed run will be skipped.
+Delete that run and rerun the sweep, the completed run will be skipped. A [bug](https://github.com/wandb/wandb/issues/3344) may cause this fails and the fix is click resume button in sweep control page of UI:
 
-Reference: [Sweep Configuration](https://docs.wandb.ai/guides/sweeps/configuration)
+<img src="/Users/geyao/PycharmProjects/wandb_demo/imgs/resume_button.png" alt="resume_button" style="zoom:50%;" />
+
+Reference:
+
+- [Sweep Configuration](https://docs.wandb.ai/guides/sweeps/configuration)
+- [wandb.sweep](https://docs.wandb.ai/ref/python/sweep)
+- [Introduction to Hyperparameter Sweeps using W&B](https://colab.research.google.com/github/wandb/examples/blob/master/colabs/pytorch/Organizing_Hyperparameter_Sweeps_in_PyTorch_with_W%26B.ipynb#scrollTo=Sf1VvnIyrIp3)
 
 # How to check the logged data?
 
@@ -63,13 +73,17 @@ Reference: [Sweep Configuration](https://docs.wandb.ai/guides/sweeps/configurati
 
 ### Visualize UI
 
-Check From [wandb](https://wandb.ai/) website.
+Check from [wandb](https://wandb.ai/) website.
 
 ### Get data
 
-[Export Run Data](https://docs.wandb.ai/guides/track/public-api-guide#export-run-data)
+https://github.com/geyao1995/wandb_demo/blob/23b6672582c6ae74920d5f7cbbdf7678bb515fd6/help_funcs_wandb.py#L65
+
+Reference: [Export Run Data](https://docs.wandb.ai/guides/track/public-api-guide#export-run-data)
 
 ## From local
+
+[wandb使用教程(四)：wandb本地部署](https://zhuanlan.zhihu.com/p/521663928)
 
 TODO
 

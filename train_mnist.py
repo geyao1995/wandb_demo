@@ -7,7 +7,7 @@ from tester import Tester
 from trainer import Trainer
 from help_funcs_wandb import set_wandb_env, make_wandb_config, convert_wandb_config, save_model_to_wandb_dir
 import torch.optim as optim
-
+from pprint import pprint
 
 def define_wandb_metrics():
     epoch_step = 'epoch_step'
@@ -21,15 +21,15 @@ def define_wandb_metrics():
 
 
 def train_model(seed):
-    set_wandb_env()
+    set_wandb_env(is_online=True)
     param_config = make_wandb_config(ParamConfig())
     run = wandb.init(project="my-mnist-test-project", reinit=True,
                      group='Group-A', job_type='Train',
                      notes='This is a demo',
-                     config=param_config, mode='online')  # can be later synced with the `wandb sync` command.
+                     config=param_config)  # can be later synced with the `wandb sync` command.
     wandb.run.name = f'MNIST_test-{wandb.run.id}'
     config_param = convert_wandb_config(wandb.config)  # for parameter sweep
-    print(config_param)
+    pprint(config_param)
     epoch_step, train_loss, test_acc = define_wandb_metrics()
 
     set_seed(seed)

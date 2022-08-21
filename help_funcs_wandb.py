@@ -7,8 +7,13 @@ from dataclasses import asdict
 import os
 
 
-def set_wandb_env():
+def set_wandb_env(is_online: bool = True):
     os.environ['WANDB_IGNORE_GLOBS'] = '*.pth'  # ignore *.pth files
+    if is_online:
+        os.environ['WANDB_MODE'] = 'online'
+    else:
+        # can be later synced with the `wandb sync` command.
+        os.environ['WANDB_MODE'] = 'offline'
 
 
 def define_wandb_lr_metrics():
