@@ -59,7 +59,7 @@ Rerun specific parameter config:
 
 Delete that run and rerun the sweep, the completed run will be skipped. A [bug](https://github.com/wandb/wandb/issues/3344) may cause this fails and the fix is click resume button in sweep control page of UI:
 
-<img src="/Users/geyao/PycharmProjects/wandb_demo/imgs/resume_button.png" alt="resume_button" style="zoom:50%;" />
+<img src="./imgs/resume_button.png" alt="resume_button" style="zoom:50%;" />
 
 Reference:
 
