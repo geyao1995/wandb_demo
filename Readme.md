@@ -21,7 +21,7 @@ The contents in this repository:
   - [log metric](#log-metric)
   - [sweep parameters](#sweep-parameters)
   - [save code and compare](#save-code-and-compare)
-- [How to check the logged data?](#How-to-check-the-logged-data?)
+- [How to check the logged data?](#how-to-check-the-logged-data)
 
 # Requirements
 
@@ -101,6 +101,10 @@ Reference:
 - [Introduction to Hyperparameter Sweeps using W&B](https://colab.research.google.com/github/wandb/examples/blob/master/colabs/pytorch/Organizing_Hyperparameter_Sweeps_in_PyTorch_with_W%26B.ipynb#scrollTo=Sf1VvnIyrIp3)
 
 ## save code and compare
+
+Save code:
+
+https://github.com/geyao1995/wandb_demo/blob/a38f22d14f00f7c3ba4c081ae6f4658cb71937cb/train_mnist.py#L32
 
 Compare them in UI.
 
