@@ -29,6 +29,7 @@ def train_model():
                      notes='This is a demo',
                      config=param_config)  # can be later synced with the `wandb sync` command.
     wandb.run.name = f'MNIST_test-{wandb.run.id}'
+    wandb.run.log_code(".")  # walks the current directory and save files that end with .py.
     config_param = from_wandb_config(wandb.config)  # for parameter sweep
     print(f'Param config = \n'
           f'{pprint.pformat(config_param, indent=4)}')
@@ -61,7 +62,7 @@ def train_model():
 
     for idx_epoch in range(1, config_param.epoch_total + 1):
         loss_train, lr = trainer.train_epoch(idx_epoch)
-        if idx_epoch % 2 == 0:
+        if idx_epoch % 1 == 0:
             acc = tester.evaluate()
             acc_all.append(acc)
             wandb.log({test_acc: acc, epoch_step: idx_epoch})

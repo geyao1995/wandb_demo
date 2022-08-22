@@ -94,6 +94,7 @@ def export_files_name(run_instance):
 
 
 if __name__ == '__main__':
-    run_instance = 'geyao/my-mnist-test-project/3a21s1op'
-    r = export_wandb_run_data(run_instance, keys=['train-phase/loss', ])
+    run_instance = 'geyao/my-mnist-test-project/36eyngfs'
+    # r = export_wandb_run_data(run_instance, keys=['train-phase/loss', ])
+    r = export_files_name(run_instance)
     print(r)

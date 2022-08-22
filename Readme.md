@@ -13,11 +13,21 @@ Please see the official [Documentation](https://docs.wandb.ai/) of for details.
 
 The codes in this repository implement the experiments about training and testing the classification model (using the [MNIST](http://yann.lecun.com/exdb/mnist/) dataset). More important, these codes incorporate W&B API to manage the experiments and record data. This repository can serve as a reference to use W&B.
 
+The contents in this repository:
+
+- [Set up wandb](#Set-up-wandb)
+- W&B helps following tasks:
+  - [record hyper-parameters](#record-hyper-parameters)
+  - [log metric](#log-metric)
+  - [sweep parameters](#sweep-parameters)
+  - [save code and compare](#save-code-and-compare)
+- [How to check the logged data?](#How-to-check-the-logged-data?)
+
 # Requirements
 
 - pytorch
 - tqdm
-- wandb
+- wandb (0.13.1 version)
 
 # Set up wandb
 
@@ -27,7 +37,7 @@ Avoid uploading model weights (saved in wandb local directory) to wandb cloud:
 
 https://github.com/geyao1995/wandb_demo/blob/23b6672582c6ae74920d5f7cbbdf7678bb515fd6/help_funcs_wandb.py#L11
 
-# W&B helps following tasks
+# W&B helps following tasks:
 
 ## record hyper-parameters
 
@@ -89,6 +99,16 @@ Reference:
 - [Sweep Configuration](https://docs.wandb.ai/guides/sweeps/configuration)
 - [wandb.sweep](https://docs.wandb.ai/ref/python/sweep)
 - [Introduction to Hyperparameter Sweeps using W&B](https://colab.research.google.com/github/wandb/examples/blob/master/colabs/pytorch/Organizing_Hyperparameter_Sweeps_in_PyTorch_with_W%26B.ipynb#scrollTo=Sf1VvnIyrIp3)
+
+## save code and compare
+
+Compare them in UI.
+
+Reference:
+
+- [Code Saving](https://docs.wandb.ai/ref/app/features/panels/code)
+- [Code Comparer](https://docs.wandb.ai/ref/app/features/panels/code#code-comparer)
+- [`log_code`](https://docs.wandb.ai/ref/python/run#log_code)
 
 # How to check the logged data?
 
