@@ -5,9 +5,10 @@ from help_funcs import set_seed, get_device, get_lr_scheduler
 from model import FlattenModel
 from tester import Tester
 from trainer import Trainer
-from help_funcs_wandb import set_wandb_env, make_wandb_config, convert_wandb_config, save_model_to_wandb_dir
+from help_funcs_wandb import set_wandb_env, make_wandb_config, from_wandb_config, save_model_to_wandb_dir
 import torch.optim as optim
-from pprint import pprint
+import pprint
+
 
 def define_wandb_metrics():
     epoch_step = 'epoch_step'
@@ -20,7 +21,7 @@ def define_wandb_metrics():
     return epoch_step, train_loss, test_acc
 
 
-def train_model(seed):
+def train_model():
     set_wandb_env(is_online=True)
     param_config = make_wandb_config(ParamConfig())
     run = wandb.init(project="my-mnist-test-project", reinit=True,
@@ -28,11 +29,12 @@ def train_model(seed):
                      notes='This is a demo',
                      config=param_config)  # can be later synced with the `wandb sync` command.
     wandb.run.name = f'MNIST_test-{wandb.run.id}'
-    config_param = convert_wandb_config(wandb.config)  # for parameter sweep
-    pprint(config_param)
+    config_param = from_wandb_config(wandb.config)  # for parameter sweep
+    print(f'Param config = \n'
+          f'{pprint.pformat(config_param, indent=4)}')
     epoch_step, train_loss, test_acc = define_wandb_metrics()
 
-    set_seed(seed)
+    set_seed(config_param.seed)
     device = get_device()
 
     model = FlattenModel()
@@ -71,5 +73,4 @@ def train_model(seed):
 
 
 if __name__ == '__main__':
-    for s in range(1):
-        train_model(s)
+    train_model()

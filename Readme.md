@@ -55,7 +55,21 @@ Load different parameter configs from wandb:
 
 https://github.com/geyao1995/wandb_demo/blob/331385c5d3f463c6ed8e45f52982bdcbd3592f6c/train_mnist.py#L31
 
-Rerun specific parameter config: 
+### perform sweep from command line
+
+1. [Create yaml config file such as `sweep.yaml`](https://docs.wandb.ai/guides/sweeps/quickstart#2.-configure-your-sweep).
+2. [Initialize a sweep](https://docs.wandb.ai/guides/sweeps/quickstart#3.-initialize-a-sweep).
+3. [Launch agent(s)](https://docs.wandb.ai/guides/sweeps/quickstart#4.-launch-agent-s).
+
+### perform sweep through python code
+
+1. Load config from yaml file or python code.
+   - If load config from yaml file, the `program` key is needed.
+   - If load config through python code, the `function` parameter for `wandb.agent` is needed.
+2. Initialize the sweep.
+3. Run the sweep agent.
+
+### rerun specific parameter config
 
 Delete that run and rerun the sweep, the completed run will be skipped. A [bug](https://github.com/wandb/wandb/issues/3344) may cause this fails and the fix is click resume button in sweep control page of UI:
 

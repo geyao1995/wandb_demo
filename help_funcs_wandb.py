@@ -32,7 +32,7 @@ def make_wandb_config(my_config: ParamConfig):
     return wandb_config
 
 
-def convert_wandb_config(wandb_config):
+def from_wandb_config(wandb_config) -> ParamConfig:
     """convert wandb config to dataclass config"""
     param_config = ParamConfig(**wandb_config)
     return param_config

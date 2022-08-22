@@ -4,7 +4,7 @@ parameters:
   lr_schedule:
     values: [ step, cyclic ]
   epoch_total:
-    values: [ 2, ]
+    values: [ 2, 4 ]
 metric:
   goal: maximize
   name: test-result/accuracy
