@@ -64,10 +64,19 @@ https://github.com/geyao1995/wandb_demo/blob/331385c5d3f463c6ed8e45f52982bdcbd35
 ### perform sweep through python code
 
 1. Load config from yaml file or python code.
+
    - If load config from yaml file, the `program` key is needed.
    - If load config through python code, the `function` parameter for `wandb.agent` is needed.
+
+   https://github.com/geyao1995/wandb_demo/blob/7832676596515d2908278f0cc375d12a7831983e/sweep_run.py#L54-L60
+
 2. Initialize the sweep.
+
+   https://github.com/geyao1995/wandb_demo/blob/7832676596515d2908278f0cc375d12a7831983e/sweep_run.py#L65
+
 3. Run the sweep agent.
+
+   https://github.com/geyao1995/wandb_demo/blob/7832676596515d2908278f0cc375d12a7831983e/sweep_run.py#L66
 
 ### rerun specific parameter config
 
